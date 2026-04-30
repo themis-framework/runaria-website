@@ -70,45 +70,144 @@
       font-size: 0.8rem;
       color: #555555;
     }
+
+    #lang-switcher {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.85rem;
+      z-index: 1000;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: #555555;
+      padding: 0.1rem 0.2rem;
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .lang-sep {
+      color: #cccccc;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <div id="lang-switcher">
+    <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button id="btn-ru" class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
+
   <div class="container">
     <header>
       <h1>Runaria – Cipher Puzzle</h1>
-      <p>Privacy Policy &nbsp;·&nbsp; Last Updated: April 1, 2026</p>
+      <p data-i18n="subtitle"></p>
     </header>
 
-    <h2>Information We Collect</h2>
-    <p><strong>We do not collect, store, or transmit any personal information.</strong></p>
-    <p>
-      The app stores game progress (completed levels, current status, and preferences)
-      locally on your device only. This data never leaves your device and is not
-      transmitted to any servers or third parties.
-    </p>
+    <h2 data-i18n="h_collect"></h2>
+    <p><strong data-i18n="p_no_collect_strong"></strong></p>
+    <p data-i18n="p_no_collect_detail"></p>
 
-    <h2>Third-Party Services</h2>
-    <p>
-      The app does not integrate with any third-party services, analytics platforms,
-      or advertising networks.
-    </p>
+    <h2 data-i18n="h_third_party"></h2>
+    <p data-i18n="p_third_party"></p>
 
-    <h2>Children's Privacy</h2>
-    <p>
-      Our app does not collect any personal information from anyone, including children
-      under the age of 13.
-    </p>
+    <h2 data-i18n="h_children"></h2>
+    <p data-i18n="p_children"></p>
 
-    <h2>Data Deletion</h2>
-    <p>You can delete all game data by uninstalling the app from your device.</p>
+    <h2 data-i18n="h_deletion"></h2>
+    <p data-i18n="p_deletion"></p>
 
-    <h2>Contact</h2>
-    <p>If you have questions about this Privacy Policy, please contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
+    <h2 data-i18n="h_contact"></h2>
+    <p data-i18n="p_contact"></p>
+    <p><strong data-i18n="p_email_label"></strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
 
     <footer>
-      &copy; 2026 Themis Framework. All rights reserved.
+      <span data-i18n="footer"></span>
     </footer>
   </div>
+
+  <script>
+    var T = {
+      en: {
+        subtitle: "Privacy Policy \u00a0\u00b7\u00a0 Last Updated: April 1, 2026",
+        h_collect: "Information We Collect",
+        p_no_collect_strong: "We do not collect, store, or transmit any personal information.",
+        p_no_collect_detail: "The app stores game progress (completed levels, current status, and preferences) locally on your device only. This data never leaves your device and is not transmitted to any servers or third parties.",
+        h_third_party: "Third-Party Services",
+        p_third_party: "The app does not integrate with any third-party services, analytics platforms, or advertising networks.",
+        h_children: "Children\u2019s Privacy",
+        p_children: "Our app does not collect any personal information from anyone, including children under the age of 13.",
+        h_deletion: "Data Deletion",
+        p_deletion: "You can delete all game data by uninstalling the app from your device.",
+        h_contact: "Contact",
+        p_contact: "If you have questions about this Privacy Policy, please contact us at:",
+        p_email_label: "Email:",
+        footer: "\u00a9 2026 Themis Framework. All rights reserved."
+      },
+      ru: {
+        subtitle: "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u00a0\u00b7\u00a0 \u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435: 1 \u0430\u043f\u0440\u0435\u043b\u044f 2026 \u0433.",
+        h_collect: "\u0421\u043e\u0431\u0438\u0440\u0430\u0435\u043c\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f",
+        p_no_collect_strong: "\u041c\u044b \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c, \u043d\u0435 \u0445\u0440\u0430\u043d\u0438\u043c \u0438 \u043d\u0435 \u043f\u0435\u0440\u0435\u0434\u0430\u0451\u043c \u043d\u0438\u043a\u0430\u043a\u0438\u0435 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435.",
+        p_no_collect_detail: "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0445\u0440\u0430\u043d\u0438\u0442 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u0432 \u0438\u0433\u0440\u0435 (\u043f\u0440\u043e\u0439\u0434\u0435\u043d\u043d\u044b\u0435 \u0443\u0440\u043e\u0432\u043d\u0438, \u0442\u0435\u043a\u0443\u0449\u0435\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0438 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438) \u0438\u0441\u043a\u043b\u044e\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043d\u0430 \u0432\u0430\u0448\u0435\u043c \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0435. \u042d\u0442\u0438 \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0438\u043a\u043e\u0433\u0434\u0430 \u043d\u0435 \u043f\u043e\u043a\u0438\u0434\u0430\u044e\u0442 \u0432\u0430\u0448\u0435 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e \u0438 \u043d\u0435 \u043f\u0435\u0440\u0435\u0434\u0430\u044e\u0442\u0441\u044f \u043d\u0438 \u043d\u0430 \u043a\u0430\u043a\u0438\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u044b \u0438\u043b\u0438 \u0442\u0440\u0435\u0442\u044c\u0438\u043c \u043b\u0438\u0446\u0430\u043c.",
+        h_third_party: "\u0421\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b",
+        p_third_party: "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043d\u0435 \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u043d\u0438 \u0441 \u043a\u0430\u043a\u0438\u043c\u0438-\u043b\u0438\u0431\u043e \u0441\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u043c\u0438 \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c\u0438, \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430\u043c\u0438 \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0438 \u0438\u043b\u0438 \u0440\u0435\u043a\u043b\u0430\u043c\u043d\u044b\u043c\u0438 \u0441\u0435\u0442\u044f\u043c\u0438.",
+        h_children: "\u041a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0434\u0435\u0442\u0435\u0439",
+        p_children: "\u041d\u0430\u0448\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0438 \u0443 \u043a\u043e\u0433\u043e, \u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0443 \u0434\u0435\u0442\u0435\u0439 \u043c\u043b\u0430\u0434\u0448\u0435 13 \u043b\u0435\u0442.",
+        h_deletion: "\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0445",
+        p_deletion: "\u0412\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0432\u0441\u0435 \u0438\u0433\u0440\u043e\u0432\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435, \u0443\u0434\u0430\u043b\u0438\u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0441 \u0432\u0430\u0448\u0435\u0433\u043e \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430.",
+        h_contact: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+        p_contact: "\u0415\u0441\u043b\u0438 \u0443 \u0432\u0430\u0441 \u0435\u0441\u0442\u044c \u0432\u043e\u043f\u0440\u043e\u0441\u044b \u043e\u0431 \u044d\u0442\u043e\u0439 \u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0435 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u043d\u0430\u043c\u0438:",
+        p_email_label: "\u042d\u043b. \u043f\u043e\u0447\u0442\u0430:",
+        footer: "\u00a9 2026 Themis Framework. \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b."
+      }
+    };
+
+    var titles = {
+      en: "Privacy Policy \u2013 Runaria",
+      ru: "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u2013 Runaria"
+    };
+
+    function applyLang(lang) {
+      var els = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < els.length; i++) {
+        var key = els[i].getAttribute('data-i18n');
+        if (T[lang] && T[lang][key] !== undefined) {
+          els[i].textContent = T[lang][key];
+        }
+      }
+      document.documentElement.lang = lang;
+      document.title = titles[lang];
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+      localStorage.setItem('lang', lang);
+    }
+
+    function setLang(lang) {
+      applyLang(lang);
+    }
+
+    (function () {
+      var saved = localStorage.getItem('lang');
+      var lang = saved || (navigator.language || '').slice(0, 2).toLowerCase();
+      applyLang(lang === 'ru' ? 'ru' : 'en');
+    }());
+  </script>
 </body>
 </html>
