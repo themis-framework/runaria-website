@@ -21,7 +21,7 @@
     }
 
     header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 3rem;
       position: relative;
     }
@@ -93,7 +93,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Runaria</h1>
+      <h1 id="site-title">Runaria</h1>
       <div class="lang-toggle">
         <button id="btn-ru" onclick="setLang('ru')">RU</button>
         <button id="btn-en" onclick="setLang('en')">EN</button>
@@ -131,6 +131,7 @@
       });
       document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('site-title').textContent = lang === 'ru' ? 'Рунария' : 'Runaria';
     }
 
     (function() {
