@@ -127,7 +127,7 @@
     function setLang(lang) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-lang]').forEach(function(el) {
-        el.style.display = el.dataset.lang === lang ? '' : 'none';
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
       });
       document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
