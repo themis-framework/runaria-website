@@ -21,7 +21,7 @@
     }
 
     header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 3rem;
       position: relative;
     }
@@ -81,8 +81,9 @@
     }
 
     footer {
-      text-align: center;
-      margin-top: 4rem;
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1rem;
       font-size: 0.8rem;
       color: #555555;
     }
@@ -93,7 +94,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Runaria</h1>
+      <h1 id="site-title">Runaria</h1>
       <div class="lang-toggle">
         <button id="btn-ru" onclick="setLang('ru')">RU</button>
         <button id="btn-en" onclick="setLang('en')">EN</button>
@@ -118,7 +119,7 @@
     <p data-lang="en">Our brave tester Johnny Pipetka</p>
     <p data-lang="en">Anna Kutkova</p>
 
-    <footer>
+    <footer id="site-footer">
       &copy; 2026 Themis Framework. All rights reserved.
     </footer>
   </div>
@@ -131,6 +132,10 @@
       });
       document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('site-title').textContent = lang === 'ru' ? 'Рунария' : 'Runaria';
+      document.getElementById('site-footer').textContent = lang === 'ru'
+        ? '© 2026 Тэмис Фреймворк. Все права защищены.'
+        : '© 2026 Themis Framework. All rights reserved.';
     }
 
     (function() {
