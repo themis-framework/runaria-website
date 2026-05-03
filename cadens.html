@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Cadens</title>
+  <title>Cadens</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,6 +23,7 @@
     header {
       text-align: center;
       margin-bottom: 3rem;
+      position: relative;
     }
 
     header h1 {
@@ -36,6 +37,31 @@
       margin-top: 0.4rem;
       font-size: 0.9rem;
       color: #555555;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .lang-toggle button {
+      background: none;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      color: #555555;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lang-toggle button.active {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
     }
 
     h2 {
@@ -94,39 +120,68 @@
       font-size: 0.8rem;
       color: #555555;
     }
+
+    [data-lang] { display: none; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Cadens</h1>
-      <p>Privacy Policy &nbsp;·&nbsp; Last Updated: April 12, 2026</p>
+      <p data-lang="en">Privacy Policy &nbsp;·&nbsp; Last Updated: April 12, 2026</p>
+      <p data-lang="ru">Политика конфиденциальности &nbsp;·&nbsp; Последнее обновление: 12 апреля 2026 г.</p>
+      <div class="lang-toggle">
+        <button id="btn-ru" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
     </header>
 
-    <h2>Introduction</h2>
-    <p>
+    <!-- Introduction -->
+    <h2 data-lang="en">Introduction</h2>
+    <h2 data-lang="ru">Введение</h2>
+    <p data-lang="en">
       Cadens ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
       explains how we collect, use, and safeguard information when you use our mobile application.
     </p>
+    <p data-lang="ru">
+      Cadens («мы», «наш» или «нас») стремится защитить вашу конфиденциальность. Настоящая Политика
+      конфиденциальности объясняет, как мы собираем, используем и защищаем информацию при
+      использовании вами нашего мобильного приложения.
+    </p>
 
-    <h2>Information We Collect</h2>
+    <!-- Information We Collect -->
+    <h2 data-lang="en">Information We Collect</h2>
+    <h2 data-lang="ru">Собираемая информация</h2>
 
-    <h3>Guest Mode</h3>
-    <p>
+    <h3 data-lang="en">Guest Mode</h3>
+    <h3 data-lang="ru">Гостевой режим</h3>
+    <p data-lang="en">
       When using Cadens in Guest Mode, we do not collect any personal information. Your training
       data is stored locally on your device only.
     </p>
+    <p data-lang="ru">
+      При использовании Cadens в гостевом режиме мы не собираем никакой личной информации. Ваши
+      данные тренировок хранятся только на вашем устройстве.
+    </p>
 
-    <h3>Account Mode</h3>
-    <p>When you create an account with Cadens, we collect:</p>
-    <ul>
+    <h3 data-lang="en">Account Mode</h3>
+    <h3 data-lang="ru">Режим аккаунта</h3>
+    <p data-lang="en">When you create an account with Cadens, we collect:</p>
+    <p data-lang="ru">При создании аккаунта в Cadens мы собираем:</p>
+    <ul data-lang="en">
       <li><strong>User ID</strong>: A unique identifier automatically generated for your account</li>
       <li><strong>Training Data</strong>: Questions, answers, and training progress you create within the app</li>
     </ul>
+    <ul data-lang="ru">
+      <li><strong>Идентификатор пользователя</strong>: Уникальный идентификатор, автоматически создаваемый для вашего аккаунта</li>
+      <li><strong>Данные тренировок</strong>: Вопросы, ответы и прогресс тренировок, которые вы создаёте в приложении</li>
+    </ul>
 
-    <h3>Information We Do NOT Collect</h3>
-    <p>We do not collect:</p>
-    <ul>
+    <h3 data-lang="en">Information We Do NOT Collect</h3>
+    <h3 data-lang="ru">Информация, которую мы НЕ собираем</h3>
+    <p data-lang="en">We do not collect:</p>
+    <p data-lang="ru">Мы не собираем:</p>
+    <ul data-lang="en">
       <li>Email addresses</li>
       <li>Names or surnames</li>
       <li>Phone numbers</li>
@@ -134,159 +189,312 @@
       <li>Payment information</li>
       <li>Any other personally identifiable information (PII)</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Адреса электронной почты</li>
+      <li>Имена и фамилии</li>
+      <li>Номера телефонов</li>
+      <li>Физические адреса</li>
+      <li>Платёжную информацию</li>
+      <li>Любую другую персональную идентификационную информацию (ПИИ)</li>
+    </ul>
 
-    <h2>How We Use Your Information</h2>
-    <p>We use the information collected to:</p>
-    <ul>
+    <!-- How We Use -->
+    <h2 data-lang="en">How We Use Your Information</h2>
+    <h2 data-lang="ru">Как мы используем вашу информацию</h2>
+    <p data-lang="en">We use the information collected to:</p>
+    <p data-lang="ru">Мы используем собранную информацию для:</p>
+    <ul data-lang="en">
       <li>Provide and maintain the core functionality of the app</li>
       <li>Store your training questions, answers, and progress</li>
       <li>Enable optional coach collaboration features</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Предоставления и поддержки основных функций приложения</li>
+      <li>Хранения ваших тренировочных вопросов, ответов и прогресса</li>
+      <li>Обеспечения дополнительных функций совместной работы с тренером</li>
+    </ul>
 
-    <h2>Coach Collaboration Feature</h2>
-    <p>Cadens offers an optional feature that allows you to work with coaches:</p>
-    <ul>
+    <!-- Coach Collaboration -->
+    <h2 data-lang="en">Coach Collaboration Feature</h2>
+    <h2 data-lang="ru">Функция совместной работы с тренером</h2>
+    <p data-lang="en">Cadens offers an optional feature that allows you to work with coaches:</p>
+    <p data-lang="ru">Cadens предлагает дополнительную функцию, позволяющую вам работать с тренерами:</p>
+    <ul data-lang="en">
       <li>You may <strong>voluntarily</strong> share your User ID with a coach</li>
       <li>Once shared, the coach can access your training progress, questions, and answers</li>
       <li>This sharing is entirely opt-in and under your control</li>
       <li>You are responsible for deciding whether to share your User ID with a coach</li>
     </ul>
-    <div class="note">
+    <ul data-lang="ru">
+      <li>Вы можете <strong>добровольно</strong> поделиться своим идентификатором пользователя с тренером</li>
+      <li>После этого тренер получит доступ к вашему прогрессу тренировок, вопросам и ответам</li>
+      <li>Этот обмен осуществляется исключительно по вашей инициативе и находится под вашим контролем</li>
+      <li>Вы несёте ответственность за решение о том, передавать ли свой идентификатор тренеру</li>
+    </ul>
+    <div class="note" data-lang="en">
       <strong>Important</strong>: We do not facilitate or verify coach relationships. Sharing your
       User ID is at your own discretion.
     </div>
+    <div class="note" data-lang="ru">
+      <strong>Важно</strong>: Мы не содействуем проверке отношений с тренером и не верифицируем их.
+      Передача вашего идентификатора пользователя осуществляется по вашему усмотрению.
+    </div>
 
-    <h2>Data Storage and Security</h2>
-    <ul>
+    <!-- Data Storage -->
+    <h2 data-lang="en">Data Storage and Security</h2>
+    <h2 data-lang="ru">Хранение и защита данных</h2>
+    <ul data-lang="en">
       <li>Your training data (questions and answers) is stored on our secure servers</li>
       <li>We implement industry-standard security measures to protect your data</li>
       <li>However, we cannot guarantee absolute security of any information transmitted over the internet</li>
     </ul>
-    <div class="note">
+    <ul data-lang="ru">
+      <li>Ваши тренировочные данные (вопросы и ответы) хранятся на наших защищённых серверах</li>
+      <li>Мы применяем стандартные меры безопасности для защиты ваших данных</li>
+      <li>Однако мы не можем гарантировать абсолютную безопасность информации, передаваемой через интернет</li>
+    </ul>
+    <div class="note" data-lang="en">
       <strong>User Responsibility</strong>: We strongly discourage storing sensitive personal
       information, medical details, or confidential data in your training questions and answers.
       While our app is designed for memory training, you should avoid including information that
       could harm you if accessed by others.
     </div>
+    <div class="note" data-lang="ru">
+      <strong>Ответственность пользователя</strong>: Мы настоятельно не рекомендуем хранить
+      конфиденциальную личную информацию, медицинские данные или секретные сведения в
+      тренировочных вопросах и ответах. Хотя наше приложение предназначено для тренировки памяти,
+      следует избегать включения информации, которая может причинить вам вред при доступе
+      третьих лиц.
+    </div>
 
-    <h2>Data Sharing and Disclosure</h2>
-    <p>We do not sell, trade, or rent your information to third parties.</p>
-    <p>We may share your information only in the following circumstances:</p>
-    <ul>
+    <!-- Data Sharing -->
+    <h2 data-lang="en">Data Sharing and Disclosure</h2>
+    <h2 data-lang="ru">Передача и раскрытие данных</h2>
+    <p data-lang="en">We do not sell, trade, or rent your information to third parties.</p>
+    <p data-lang="ru">Мы не продаём, не обмениваем и не сдаём в аренду вашу информацию третьим лицам.</p>
+    <p data-lang="en">We may share your information only in the following circumstances:</p>
+    <p data-lang="ru">Мы можем раскрыть вашу информацию только в следующих случаях:</p>
+    <ul data-lang="en">
       <li><strong>With coaches you authorize</strong>: When you explicitly share your User ID with a coach</li>
       <li><strong>Legal requirements</strong>: When required by law or to protect our rights</li>
       <li><strong>Service providers</strong>: With trusted third-party service providers who assist in operating our app (under strict confidentiality agreements)</li>
     </ul>
+    <ul data-lang="ru">
+      <li><strong>С тренерами, которых вы авторизовали</strong>: Когда вы явно предоставляете свой идентификатор пользователя тренеру</li>
+      <li><strong>Требования законодательства</strong>: Когда это требуется по закону или для защиты наших прав</li>
+      <li><strong>Поставщики услуг</strong>: Надёжным сторонним поставщикам услуг, оказывающим помощь в работе нашего приложения (по строгим соглашениям о конфиденциальности)</li>
+    </ul>
 
-    <h2>Your Rights and Choices</h2>
-    <p>You have the right to:</p>
-    <ul>
+    <!-- Your Rights -->
+    <h2 data-lang="en">Your Rights and Choices</h2>
+    <h2 data-lang="ru">Ваши права и возможности</h2>
+    <p data-lang="en">You have the right to:</p>
+    <p data-lang="ru">Вы вправе:</p>
+    <ul data-lang="en">
       <li>Use the app in Guest Mode without creating an account</li>
       <li>Access your training data at any time</li>
       <li>Delete your account and associated data by contacting us</li>
       <li>Choose whether to share your User ID with coaches</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Использовать приложение в гостевом режиме без создания аккаунта</li>
+      <li>Получить доступ к своим тренировочным данным в любое время</li>
+      <li>Удалить свой аккаунт и связанные данные, связавшись с нами</li>
+      <li>Решать, передавать ли свой идентификатор пользователя тренерам</li>
+    </ul>
 
-    <h2>Children's Privacy</h2>
-    <p>
+    <!-- Children's Privacy -->
+    <h2 data-lang="en">Children's Privacy</h2>
+    <h2 data-lang="ru">Конфиденциальность детей</h2>
+    <p data-lang="en">
       Cadens does not knowingly collect information from children under the age of 13. If we
       discover that a child under 13 has provided us with information, we will delete it immediately.
     </p>
+    <p data-lang="ru">
+      Cadens не собирает намеренно информацию о детях в возрасте до 13 лет. Если мы обнаружим,
+      что ребёнок до 13 лет предоставил нам информацию, мы немедленно удалим её.
+    </p>
 
-    <h2>Changes to This Privacy Policy</h2>
-    <p>
+    <!-- Changes to Policy -->
+    <h2 data-lang="en">Changes to This Privacy Policy</h2>
+    <h2 data-lang="ru">Изменения в настоящей Политике конфиденциальности</h2>
+    <p data-lang="en">
       We may update this Privacy Policy from time to time. We will notify you of any changes by
       updating the "Last Updated" date at the top of this policy. Your continued use of Cadens
       after changes become effective constitutes your acceptance of the revised policy.
     </p>
+    <p data-lang="ru">
+      Мы можем периодически обновлять настоящую Политику конфиденциальности. Мы уведомим вас об
+      изменениях, обновив дату «Последнего обновления» в начале настоящей политики. Ваше
+      продолжение использования Cadens после вступления изменений в силу означает ваше согласие
+      с обновлённой политикой.
+    </p>
 
-    <h2>Data Retention</h2>
-    <ul>
+    <!-- Data Retention -->
+    <h2 data-lang="en">Data Retention</h2>
+    <h2 data-lang="ru">Хранение данных</h2>
+    <ul data-lang="en">
       <li>Account data is retained until you request deletion</li>
       <li>Guest mode data is stored only on your device and is not transmitted to our servers</li>
       <li>You may request deletion of your account and all associated data at any time</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Данные аккаунта хранятся до тех пор, пока вы не запросите их удаление</li>
+      <li>Данные гостевого режима хранятся только на вашем устройстве и не передаются на наши серверы</li>
+      <li>Вы можете запросить удаление своего аккаунта и всех связанных данных в любое время</li>
+    </ul>
 
-    <h2>International Users</h2>
-    <p>
+    <!-- International Users -->
+    <h2 data-lang="en">International Users</h2>
+    <h2 data-lang="ru">Международные пользователи</h2>
+    <p data-lang="en">
       Your information may be transferred to and stored on servers located outside your country of
       residence. By using Cadens, you consent to such transfers.
     </p>
+    <p data-lang="ru">
+      Ваша информация может быть передана на серверы, расположенные за пределами вашей страны
+      проживания. Используя Cadens, вы соглашаетесь на такую передачу.
+    </p>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
+    <!-- Contact Us -->
+    <h2 data-lang="en">Contact Us</h2>
+    <h2 data-lang="ru">Свяжитесь с нами</h2>
+    <p data-lang="en">If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+    <p data-lang="ru">Если у вас возникли вопросы по настоящей Политике конфиденциальности или нашей практике обработки данных, свяжитесь с нами по адресу:</p>
+    <p data-lang="en"><strong>Email:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
+    <p data-lang="ru"><strong>Электронная почта:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
 
-    <h2>Third-Party Services</h2>
-    <p>Cadens may use third-party services for:</p>
-    <ul>
+    <!-- Third-Party Services -->
+    <h2 data-lang="en">Third-Party Services</h2>
+    <h2 data-lang="ru">Сторонние сервисы</h2>
+    <p data-lang="en">Cadens may use third-party services for:</p>
+    <p data-lang="ru">Cadens может использовать сторонние сервисы для:</p>
+    <ul data-lang="en">
       <li>Cloud storage and hosting</li>
       <li>Analytics (anonymized usage statistics only)</li>
       <li>Push notifications</li>
     </ul>
-    <p>These services have their own privacy policies, and we encourage you to review them.</p>
+    <ul data-lang="ru">
+      <li>Облачного хранения и хостинга</li>
+      <li>Аналитики (только анонимизированная статистика использования)</li>
+      <li>Push-уведомлений</li>
+    </ul>
+    <p data-lang="en">These services have their own privacy policies, and we encourage you to review them.</p>
+    <p data-lang="ru">Эти сервисы имеют собственные политики конфиденциальности, и мы рекомендуем вам с ними ознакомиться.</p>
 
-    <h2>California Privacy Rights</h2>
-    <p>
+    <!-- California Privacy Rights -->
+    <h2 data-lang="en">California Privacy Rights</h2>
+    <h2 data-lang="ru">Права жителей Калифорнии</h2>
+    <p data-lang="en">
       If you are a California resident, you have the right to request information about the
       categories of personal information we collect and how we use it. Since we do not collect
       traditional personal information (email, name, etc.), this right has limited applicability
       to our service.
     </p>
+    <p data-lang="ru">
+      Если вы являетесь жителем Калифорнии, вы вправе запросить информацию о категориях
+      персональных данных, которые мы собираем, и о том, как мы их используем. Поскольку мы не
+      собираем традиционные персональные данные (электронную почту, имя и т.д.), это право имеет
+      ограниченное применение к нашим услугам.
+    </p>
 
-    <h2>GDPR Compliance (European Users)</h2>
-    <p>For users in the European Economic Area:</p>
-    <ul>
+    <!-- GDPR -->
+    <h2 data-lang="en">GDPR Compliance (European Users)</h2>
+    <h2 data-lang="ru">Соответствие GDPR (пользователи из ЕС)</h2>
+    <p data-lang="en">For users in the European Economic Area:</p>
+    <p data-lang="ru">Для пользователей из Европейской экономической зоны:</p>
+    <ul data-lang="en">
       <li><strong>Legal Basis</strong>: We process your data based on your consent and our legitimate interest in providing the service</li>
       <li><strong>Data Subject Rights</strong>: You have the right to access, rectify, erase, restrict processing, and data portability</li>
       <li><strong>Right to Withdraw Consent</strong>: You may withdraw consent at any time by deleting your account</li>
       <li><strong>Right to Lodge a Complaint</strong>: You may lodge a complaint with your local data protection authority</li>
     </ul>
+    <ul data-lang="ru">
+      <li><strong>Правовое основание</strong>: Мы обрабатываем ваши данные на основании вашего согласия и наших законных интересов в предоставлении услуги</li>
+      <li><strong>Права субъекта данных</strong>: Вы имеете право на доступ, исправление, удаление, ограничение обработки и перенос данных</li>
+      <li><strong>Право на отзыв согласия</strong>: Вы можете отозвать согласие в любое время, удалив свой аккаунт</li>
+      <li><strong>Право на подачу жалобы</strong>: Вы можете подать жалобу в местный орган по защите данных</li>
+    </ul>
 
-    <h2>Your Consent</h2>
-    <p>By using Cadens, you consent to this Privacy Policy and agree to its terms.</p>
+    <!-- Your Consent -->
+    <h2 data-lang="en">Your Consent</h2>
+    <h2 data-lang="ru">Ваше согласие</h2>
+    <p data-lang="en">By using Cadens, you consent to this Privacy Policy and agree to its terms.</p>
+    <p data-lang="ru">Используя Cadens, вы соглашаетесь с настоящей Политикой конфиденциальности и принимаете её условия.</p>
 
-    <footer>
-      &copy; 2026 Themis Framework. All rights reserved.
-    </footer>
+    <footer data-lang="en">&copy; 2026 Themis Framework. All rights reserved.</footer>
+    <footer data-lang="ru">&copy; 2026 Themis Framework. Все права защищены.</footer>
   </div>
 
   <div class="container" style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #cccccc;">
     <header>
       <h1>Cadens</h1>
-      <p>Terms of Use &nbsp;·&nbsp; Last Updated: April 26, 2026</p>
+      <p data-lang="en">Terms of Use &nbsp;·&nbsp; Last Updated: April 26, 2026</p>
+      <p data-lang="ru">Условия использования &nbsp;·&nbsp; Последнее обновление: 26 апреля 2026 г.</p>
     </header>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
+    <!-- 1 -->
+    <h2 data-lang="en">1. Acceptance of Terms</h2>
+    <h2 data-lang="ru">1. Принятие условий</h2>
+    <p data-lang="en">
       By downloading, installing, or using the Cadens mobile application ("App"), you agree to be bound by these
       Terms of Use ("Terms"). If you do not agree, do not use the App.
     </p>
+    <p data-lang="ru">
+      Загружая, устанавливая или используя мобильное приложение Cadens («Приложение»), вы соглашаетесь
+      соблюдать настоящие Условия использования («Условия»). Если вы не согласны с ними, не используйте
+      Приложение.
+    </p>
 
-    <h2>2. Description of Service</h2>
-    <p>
+    <!-- 2 -->
+    <h2 data-lang="en">2. Description of Service</h2>
+    <h2 data-lang="ru">2. Описание сервиса</h2>
+    <p data-lang="en">
       Cadens is a memory training application that uses spaced repetition techniques to help users study and retain
       information. The App is available in Guest Mode (no account required) and Account Mode.
     </p>
+    <p data-lang="ru">
+      Cadens — это приложение для тренировки памяти, использующее технику интервального повторения для
+      изучения и запоминания информации. Приложение доступно в гостевом режиме (без аккаунта) и в режиме
+      аккаунта.
+    </p>
 
-    <h2>3. Eligibility</h2>
-    <p>
+    <!-- 3 -->
+    <h2 data-lang="en">3. Eligibility</h2>
+    <h2 data-lang="ru">3. Допуск к использованию</h2>
+    <p data-lang="en">
       You must be at least 13 years old to use Cadens. By using the App, you represent that you meet this
       requirement. If you are under 18, you represent that a parent or guardian has reviewed and agreed to these
       Terms on your behalf.
     </p>
+    <p data-lang="ru">
+      Вам должно быть не менее 13 лет для использования Cadens. Используя Приложение, вы подтверждаете,
+      что соответствуете этому требованию. Если вам нет 18 лет, вы подтверждаете, что родитель или законный
+      представитель ознакомился с настоящими Условиями и согласился с ними от вашего имени.
+    </p>
 
-    <h2>4. User Accounts</h2>
-    <ul>
+    <!-- 4 -->
+    <h2 data-lang="en">4. User Accounts</h2>
+    <h2 data-lang="ru">4. Аккаунты пользователей</h2>
+    <ul data-lang="en">
       <li>You are responsible for maintaining the confidentiality of your User ID</li>
       <li>You are responsible for all activity associated with your account</li>
       <li>You must notify us immediately at <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a> if you suspect unauthorized use of your account</li>
       <li>We reserve the right to terminate accounts that violate these Terms</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Вы несёте ответственность за сохранение конфиденциальности своего идентификатора пользователя</li>
+      <li>Вы несёте ответственность за все действия, связанные с вашим аккаунтом</li>
+      <li>Вы должны немедленно уведомить нас по адресу <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a>, если подозреваете несанкционированное использование вашего аккаунта</li>
+      <li>Мы оставляем за собой право удалять аккаунты, нарушающие настоящие Условия</li>
+    </ul>
 
-    <h2>5. Acceptable Use</h2>
-    <p>You agree not to use Cadens to:</p>
-    <ul>
+    <!-- 5 -->
+    <h2 data-lang="en">5. Acceptable Use</h2>
+    <h2 data-lang="ru">5. Допустимое использование</h2>
+    <p data-lang="en">You agree not to use Cadens to:</p>
+    <p data-lang="ru">Вы обязуетесь не использовать Cadens для:</p>
+    <ul data-lang="en">
       <li>Store, transmit, or distribute illegal, harmful, or offensive content</li>
       <li>Violate any applicable laws or regulations</li>
       <li>Attempt to gain unauthorized access to our systems or other users' data</li>
@@ -294,82 +502,181 @@
       <li>Use the App for any commercial purpose without our prior written consent</li>
       <li>Interfere with or disrupt the App's functionality or servers</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Хранения, передачи или распространения незаконного, вредоносного или оскорбительного контента</li>
+      <li>Нарушения применимых законов или нормативных актов</li>
+      <li>Попыток получить несанкционированный доступ к нашим системам или данным других пользователей</li>
+      <li>Обратного проектирования, декомпиляции или дизассемблирования Приложения</li>
+      <li>Использования Приложения в коммерческих целях без нашего предварительного письменного согласия</li>
+      <li>Нарушения работы или серверов Приложения</li>
+    </ul>
 
-    <h2>6. User-Generated Content</h2>
-    <p>
+    <!-- 6 -->
+    <h2 data-lang="en">6. User-Generated Content</h2>
+    <h2 data-lang="ru">6. Пользовательский контент</h2>
+    <p data-lang="en">
       You retain ownership of the training questions, answers, and content you create in Cadens. By creating
       content in the App, you grant us a limited license to store and process that content solely to provide the
       service to you.
     </p>
-    <p>
+    <p data-lang="ru">
+      Вы сохраняете право собственности на тренировочные вопросы, ответы и контент, которые вы создаёте в
+      Cadens. Создавая контент в Приложении, вы предоставляете нам ограниченную лицензию на хранение и
+      обработку этого контента исключительно для оказания услуги.
+    </p>
+    <p data-lang="en">
       You are solely responsible for the content you create. We strongly discourage storing sensitive personal
       information, medical details, or confidential data in your training content.
     </p>
+    <p data-lang="ru">
+      Вы несёте единоличную ответственность за создаваемый вами контент. Мы настоятельно не рекомендуем
+      хранить конфиденциальные персональные данные, медицинские сведения или секретную информацию в
+      тренировочном контенте.
+    </p>
 
-    <h2>7. Coach Collaboration Feature</h2>
-    <p>If you choose to share your User ID with a coach:</p>
-    <ul>
+    <!-- 7 -->
+    <h2 data-lang="en">7. Coach Collaboration Feature</h2>
+    <h2 data-lang="ru">7. Функция совместной работы с тренером</h2>
+    <p data-lang="en">If you choose to share your User ID with a coach:</p>
+    <p data-lang="ru">Если вы решаете поделиться своим идентификатором пользователя с тренером:</p>
+    <ul data-lang="en">
       <li>You do so voluntarily and at your own risk</li>
       <li>We do not verify, endorse, or take responsibility for any coach</li>
       <li>We are not liable for any consequences resulting from sharing your User ID</li>
       <li>You may revoke access by changing your account settings or contacting us</li>
     </ul>
+    <ul data-lang="ru">
+      <li>Вы делаете это добровольно и на свой страх и риск</li>
+      <li>Мы не проверяем, не одобряем и не несём ответственности за каких-либо тренеров</li>
+      <li>Мы не несём ответственности за последствия передачи вашего идентификатора</li>
+      <li>Вы можете отозвать доступ, изменив настройки аккаунта или связавшись с нами</li>
+    </ul>
 
-    <h2>8. Intellectual Property</h2>
-    <p>
+    <!-- 8 -->
+    <h2 data-lang="en">8. Intellectual Property</h2>
+    <h2 data-lang="ru">8. Интеллектуальная собственность</h2>
+    <p data-lang="en">
       All rights, title, and interest in the App — including its design, features, branding, and underlying
       technology — belong to Cadens. These Terms do not grant you any rights to our intellectual property beyond
       the limited right to use the App as described herein.
     </p>
+    <p data-lang="ru">
+      Все права, право собственности и интересы в отношении Приложения — включая его дизайн, функции,
+      брендинг и базовые технологии — принадлежат Cadens. Настоящие Условия не предоставляют вам
+      каких-либо прав на нашу интеллектуальную собственность, помимо ограниченного права использования
+      Приложения, описанного в настоящем документе.
+    </p>
 
-    <h2>9. Disclaimer of Warranties</h2>
-    <p>
+    <!-- 9 -->
+    <h2 data-lang="en">9. Disclaimer of Warranties</h2>
+    <h2 data-lang="ru">9. Отказ от гарантий</h2>
+    <p data-lang="en">
       THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO
       NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS. YOUR USE OF THE
       APP IS AT YOUR SOLE RISK.
     </p>
+    <p data-lang="ru">
+      ПРИЛОЖЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ» И «КАК ДОСТУПНО» БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫХ ИЛИ
+      ПОДРАЗУМЕВАЕМЫХ. МЫ НЕ ГАРАНТИРУЕМ, ЧТО ПРИЛОЖЕНИЕ БУДЕТ РАБОТАТЬ НЕПРЕРЫВНО, БЕЗ ОШИБОК ИЛИ СВОБОДНО
+      ОТ ВРЕДОНОСНЫХ КОМПОНЕНТОВ. ВЫ ИСПОЛЬЗУЕТЕ ПРИЛОЖЕНИЕ НА СВОЙ СТРАХ И РИСК.
+    </p>
 
-    <h2>10. Limitation of Liability</h2>
-    <p>
+    <!-- 10 -->
+    <h2 data-lang="en">10. Limitation of Liability</h2>
+    <h2 data-lang="ru">10. Ограничение ответственности</h2>
+    <p data-lang="en">
       TO THE FULLEST EXTENT PERMITTED BY LAW, CADENS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
       CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY TO YOU SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE PAST
       TWELVE MONTHS (WHICH, FOR A FREE APP, IS ZERO).
     </p>
+    <p data-lang="ru">
+      В МАКСИМАЛЬНО ДОПУСТИМОЙ ЗАКОНОДАТЕЛЬСТВОМ МЕРЕ CADENS НЕ НЕСЁТ ОТВЕТСТВЕННОСТИ ЗА КОСВЕННЫЕ,
+      СЛУЧАЙНЫЕ, ОСОБЫЕ, ПОСЛЕДУЮЩИЕ ИЛИ ШТРАФНЫЕ УБЫТКИ, ВОЗНИКШИЕ В РЕЗУЛЬТАТЕ ИСПОЛЬЗОВАНИЯ
+      ПРИЛОЖЕНИЯ, ДАЖЕ ЕСЛИ МЫ БЫЛИ ПРЕДУПРЕЖДЕНЫ О ВОЗМОЖНОСТИ ТАКИХ УБЫТКОВ. НАША СОВОКУПНАЯ
+      ОТВЕТСТВЕННОСТЬ ПЕРЕД ВАМИ НЕ МОЖЕТ ПРЕВЫШАТЬ СУММЫ, КОТОРУЮ ВЫ ЗАПЛАТИЛИ НАМ ЗА ПОСЛЕДНИЕ
+      ДВЕНАДЦАТЬ МЕСЯЦЕВ (ЧТО ДЛЯ БЕСПЛАТНОГО ПРИЛОЖЕНИЯ РАВНО НУЛЮ).
+    </p>
 
-    <h2>11. Termination</h2>
-    <p>
+    <!-- 11 -->
+    <h2 data-lang="en">11. Termination</h2>
+    <h2 data-lang="ru">11. Прекращение доступа</h2>
+    <p data-lang="en">
       We reserve the right to suspend or terminate your access to the App at any time, with or without cause, with
       or without notice. Upon termination, your right to use the App ceases immediately. You may request deletion
       of your data as described in our Privacy Policy.
     </p>
+    <p data-lang="ru">
+      Мы оставляем за собой право приостановить или прекратить ваш доступ к Приложению в любое время, с
+      указанием причины или без, с уведомлением или без. При прекращении доступа ваше право на использование
+      Приложения немедленно прекращается. Вы можете запросить удаление своих данных в соответствии с нашей
+      Политикой конфиденциальности.
+    </p>
 
-    <h2>12. Changes to These Terms</h2>
-    <p>
+    <!-- 12 -->
+    <h2 data-lang="en">12. Changes to These Terms</h2>
+    <h2 data-lang="ru">12. Изменения Условий</h2>
+    <p data-lang="en">
       We may update these Terms from time to time. We will notify you of material changes by updating the "Last
       Updated" date. Your continued use of the App after changes take effect constitutes your acceptance of the
       revised Terms.
     </p>
+    <p data-lang="ru">
+      Мы можем периодически обновлять настоящие Условия. Мы уведомим вас о существенных изменениях, обновив
+      дату «Последнего обновления». Ваше продолжение использования Приложения после вступления изменений в
+      силу означает ваше согласие с обновлёнными Условиями.
+    </p>
 
-    <h2>13. Governing Law</h2>
-    <p>
+    <!-- 13 -->
+    <h2 data-lang="en">13. Governing Law</h2>
+    <h2 data-lang="ru">13. Применимое право</h2>
+    <p data-lang="en">
       These Terms are governed by the laws of the jurisdiction in which Cadens operates, without regard to
       conflict of law principles. Any disputes shall be resolved in the competent courts of that jurisdiction.
     </p>
+    <p data-lang="ru">
+      Настоящие Условия регулируются законодательством юрисдикции, в которой работает Cadens, без учёта
+      коллизионных норм. Все споры разрешаются в компетентных судах данной юрисдикции.
+    </p>
 
-    <h2>14. Severability</h2>
-    <p>
+    <!-- 14 -->
+    <h2 data-lang="en">14. Severability</h2>
+    <h2 data-lang="ru">14. Делимость</h2>
+    <p data-lang="en">
       If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full
       force and effect.
     </p>
+    <p data-lang="ru">
+      Если какое-либо положение настоящих Условий будет признано неисполнимым, остальные положения сохраняют
+      полную силу и действие.
+    </p>
 
-    <h2>15. Contact Us</h2>
-    <p>For questions about these Terms, contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
+    <!-- 15 -->
+    <h2 data-lang="en">15. Contact Us</h2>
+    <h2 data-lang="ru">15. Свяжитесь с нами</h2>
+    <p data-lang="en">For questions about these Terms, contact us at:</p>
+    <p data-lang="ru">По вопросам, связанным с настоящими Условиями, обращайтесь к нам по адресу:</p>
+    <p data-lang="en"><strong>Email:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
+    <p data-lang="ru"><strong>Электронная почта:</strong> <a href="mailto:themis-framework@proton.me">themis-framework@proton.me</a></p>
 
-    <footer>
-      &copy; 2026 Themis Framework. All rights reserved.
-    </footer>
+    <footer data-lang="en">&copy; 2026 Themis Framework. All rights reserved.</footer>
+    <footer data-lang="ru">&copy; 2026 Themis Framework. Все права защищены.</footer>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-lang]').forEach(function(el) {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    (function() {
+      var preferred = navigator.language || navigator.userLanguage || 'en';
+      setLang(preferred.toLowerCase().startsWith('ru') ? 'ru' : 'en');
+    })();
+  </script>
 </body>
 </html>
